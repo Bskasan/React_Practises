@@ -8,8 +8,8 @@ import { data } from "./data";
 function App() {
   return (
     <div>
-      {data.map((item) => (
-        <Person name={item.name} img={item.img} tel={item.tel}/>
+      {data.map(({name, img, tel}) => (
+        <Person name={name} img={img} tel={tel}/>
       ))}
     </div>
   );
