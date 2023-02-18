@@ -32,7 +32,7 @@ const Content = () => {
   };
 
   return (
-    <div>
+    <div className="content-div">
       {/* JSX */}
       {/* Inline Styling */}
       <h2 style={{ color: "white", backgroundColor: "red" }}>React JS</h2>

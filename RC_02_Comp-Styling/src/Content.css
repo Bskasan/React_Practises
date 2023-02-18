@@ -1,6 +1,17 @@
 .par {
   text-align: justify;
+  font-size: 1.1rem;
   font-weight: 500;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.content-div {
+  padding: 2rem;
+  border: 2px solid rgba(37, 34, 34, 0.233);
+  border-radius: 10px;
+}
+
+.content-div:hover {
+  border: 2px solid rgba(148, 21, 21, 0.897);
 }
