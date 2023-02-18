@@ -1,17 +1,15 @@
-import Content from "./Content"
-import { Footer } from "./Footer"
-import Header from "./Header"
+//import logo from './logo.svg';
+//import './App.css';
 
-//* App Componenti
+//* This is App Component, as we know react is component-based.
 function App() {
   return (
-    //* jsx
-    <>
-      <Header />
-      <Content />
-      <Footer />
-    </>
-  )
+    //* JSX ( JavaScript and XML )
+    <div>
+      <h1> Hi React !</h1>
+      <h2> This is JSX </h2>
+    </div>
+  );
 }
 
-export default App
+export default App;
