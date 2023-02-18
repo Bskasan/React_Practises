@@ -13,7 +13,9 @@
 // ? ancak public klasöründeki resimler import suz bir şekilde
 //? erişilebilir.
 
-import footballKid from "../images/football-kid.jpg";
+import football from "../images/football.jpg";
+//? External Styling with css document
+import "../Content.css";
 
 const Content = () => {
   //! Local Style Objects
@@ -21,6 +23,12 @@ const Content = () => {
     fontFamily: "Thoma",
     fontSize: "1.3rem",
     lineHeight: "1.5",
+  };
+
+  const imgStyle = {
+    display: "block",
+    margin: "1rem auto",
+    width: "400px",
   };
 
   return (
@@ -36,10 +44,25 @@ const Content = () => {
       </p>
 
       <img
+        style={imgStyle}
         src="https://cdn.pixabay.com/photo/2016/11/14/05/21/children-1822688_960_720.jpg"
         alt="kids-football"
       />
-      <img src={footballKid} alt="football-img" />
+      <img style={imgStyle} src={football} alt="football-img" />
+
+      <p className="par">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
+        obcaecati iste unde repudiandae magnam beatae quo omnis. Explicabo,
+        tempora. Alias perspiciatis dolorum assumenda impedit, voluptate itaque
+        id nobis cupiditate sequi.
+      </p>
+
+      <p className="par">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
+        necessitatibus sunt voluptas dolorum nulla amet minima fugiat
+        consequatur voluptate ea itaque impedit harum mollitia, aliquam id atque
+        asperiores exercitationem soluta?
+      </p>
     </div>
   );
 };
