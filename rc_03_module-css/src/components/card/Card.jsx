@@ -4,9 +4,9 @@ import "./Card.css";
 const Card = ({ lang, img, btn }) => {
   return (
     <div>
-      <h1>{lang}</h1>
-      <img src={img} alt="img" />
-      <Button btn={btn}/>
+      <h1 className="title">{lang}</h1>
+      <img className="images" src={img} alt="img" />
+      <Button btn={btn} />
     </div>
   );
 };
