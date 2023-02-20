@@ -1,4 +1,3 @@
-
 //! 3rd Party Libraries
 //! - Bootstrap, React-Bootstrap
 //! - Tailwindd
@@ -9,6 +8,7 @@
 //! - Semantic UI
 
 import Card from "./components/card/Card";
+import data from "./utils/data";
 
 //? Module CSS
 //? Derleyici tabanli ( React - webpack ( Babel ))
@@ -16,7 +16,9 @@ import Card from "./components/card/Card";
 function App() {
   return (
     <div>
-      <Card />
+      {data.map(({ id, language, img, btnName }) => (
+        <Card key={id} lang={language} img={img} btn={btnName} />
+      ))}
     </div>
   );
 }
