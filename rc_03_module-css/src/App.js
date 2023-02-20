@@ -8,13 +8,15 @@
 //! - Material UI ( Google )
 //! - Semantic UI
 
+import Card from "./components/card/Card";
+
 //? Module CSS
 //? Derleyici tabanli ( React - webpack ( Babel ))
 
 function App() {
   return (
     <div>
-      <h1> Module CSS </h1>
+      <Card />
     </div>
   );
 }
