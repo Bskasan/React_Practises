@@ -1,9 +1,13 @@
-
+import Card from "./components/Card";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>SASS</h1>
+      <Header />
+      <Card />
+      <Footer />
     </div>
   );
 }
