@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+
+import HeaderStyle from "../scss/header.module.scss";
 
 const Header = () => {
   return (
-    <div>
-        <h1>COMMENTS</h1>
+    <div className={HeaderStyle.header}>
+      <h1>COMMENTS</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
