@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+
+.navbar {
+  background-color: $navbarColor;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  top: 0;
+
+  .links {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: flex-end;
+    gap: 3%;
+
+    a {
+      color: $defColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.5rem;
+      transition: all 0.9s;
+      &:hover {
+        background-color: $defColor;
+        color: black;
+        border: 5px solid $borderColor;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
