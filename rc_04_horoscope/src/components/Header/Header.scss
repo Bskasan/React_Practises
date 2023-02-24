@@ -13,6 +13,12 @@
     text-decoration: underline;
     letter-spacing: 0.3rem;
     animation: flicker 0.5s ease-in-out infinite alternate;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
   }
 
   @keyframes flicker {
