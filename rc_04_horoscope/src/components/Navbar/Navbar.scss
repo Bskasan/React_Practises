@@ -23,11 +23,11 @@
       text-decoration: none;
       text-transform: uppercase;
       padding: 0.5rem;
-      transition: all 0.9s;
+      transition: all 0.5s;
       &:hover {
         background-color: $defColor;
         color: black;
-        border: 5px solid $borderColor;
+        border: 2px solid $borderColor;
         border-radius: 10px;
         cursor: pointer;
       }
