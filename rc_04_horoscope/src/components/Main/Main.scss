@@ -17,6 +17,10 @@
       transform: translateY(0%);
     }
 
+    &:hover img {
+      opacity: 1;
+    }
+
     .title {
       position: absolute;
       top: 0;
