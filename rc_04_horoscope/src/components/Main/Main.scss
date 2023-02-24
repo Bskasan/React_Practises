@@ -63,4 +63,11 @@ img {
   transition: transform 0.7s ease-in-out;
   transform: translateY(100%);
   z-index: 3;
+  max-height: 75%;
+  text-align: justify;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
