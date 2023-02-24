@@ -1,16 +1,66 @@
 @import "../../scss/variables";
 
-.card-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+
+  .cards {
+    border: 1px solid #19605987;
+    background-color: #3c84ab;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover .card-over {
+      transform: translateY(0%);
+    }
+
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.644);
+      border-radius: 10px 10px 10px 10px;
+      font-size: 0.9rem;
+      z-index: 2;
+    }
+
+    .date {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      font-size: 0.8rem;
+      border-radius: 10px;
+      z-index: 2;
+    }
+  }
 }
 
 img {
   width: 500px;
   height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.5;
 }
 
 .card-over {
   width: 500px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.7s ease-in-out;
+  transform: translateY(100%);
+  z-index: 3;
 }
