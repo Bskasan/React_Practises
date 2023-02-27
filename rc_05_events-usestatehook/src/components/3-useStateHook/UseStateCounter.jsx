@@ -28,6 +28,15 @@ const UseStateCounter = () => {
     setCount(count + 1);
   };
 
+  //! Alternatives
+  //   const decrement = () => {
+  //     if (count > 0) {
+  //       setCount(count - 1)
+  //     } else {
+  //       console.log("Counter can not be negative number")
+  //     }
+  //   }
+
   return (
     <div className="container text-center mt-4">
       <h2 className="text-danger">Use State Counter</h2>
@@ -41,6 +50,20 @@ const UseStateCounter = () => {
       <button onClick={() => setCount(count - 1)} className="btn btn-warning">
         DEC
       </button>
+
+      {/* Alternatives */}
+      {/* <button onClick={decrement} className="btn btn-warning">
+        DEC
+      </button> */}
+
+      {/* <button
+        onClick={() =>
+          count > 0 ? setCount(count - 1) : alert("Should be bigger than 0")
+        }
+        className="btn btn-warning"
+      >
+        DEC
+      </button> */}
     </div>
   );
 };
