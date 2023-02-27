@@ -13,7 +13,15 @@ import React from "react";
 
 export class Counter extends React.Component {
   render() {
-    return <div>Counter</div>;
+    return (
+      <div className="container text-center mt-4">
+        <h2 className="text-danger">Class Components</h2>
+        <h1 className="display-4">Count: 0</h1>
+        <button className="btn btn-success">INC</button>
+        <button className="btn btn-danger">CLEAR</button>
+        <button className="btn btn-warning">DEC</button>
+      </div>
+    );
   }
 }
 
