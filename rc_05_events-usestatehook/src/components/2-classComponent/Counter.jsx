@@ -22,6 +22,7 @@ export class Counter extends React.Component {
     // this.increment = function () {}
 
     //? First Method - Binding (For Increment Method)
+    //? Increment methodunun Counter class'ina baglanmasi.
     this.increment = this.increment.bind(this);
   }
 
@@ -30,6 +31,13 @@ export class Counter extends React.Component {
       count: this.state.count + 1,
     });
   }
+
+  //? Second Method - Arrow Function
+  decrement = () => {
+    this.setState({
+      count: this.state.count - 1,
+    });
+  };
 
   render() {
     return (
@@ -40,7 +48,9 @@ export class Counter extends React.Component {
           INC
         </button>
         <button className="btn btn-danger">CLEAR</button>
-        <button className="btn btn-warning">DEC</button>
+        <button onClick={this.decrement} className="btn btn-warning">
+          DEC
+        </button>
       </div>
     );
   }
