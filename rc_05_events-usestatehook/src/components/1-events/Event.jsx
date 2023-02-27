@@ -20,8 +20,18 @@ const Event = () => {
     console.log(msg);
   };
 
+  function handleChange() {
+    text = "Hello React!";
+    console.log(text);
+  }
+
+  //? Static variable (by Default...)
+  //! We need to emphasize this one is not static, but it's dynamic.
+  let text = "Hi Bekir!";
+
   return (
     <div>
+      <h1>{text.toUpperCase()}</h1>
       <button onClick={handleClick}>Click</button>
       {/* By using Arrow function here, you will avoid by default invoking. */}
 
@@ -31,6 +41,8 @@ const Event = () => {
       <button onClick={() => handleReset("Please clear the text!")}>
         Reset
       </button>
+
+      <button onClick={handleChange}> Change</button>
     </div>
   );
 };
