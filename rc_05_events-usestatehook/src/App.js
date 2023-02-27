@@ -1,9 +1,9 @@
-
+import Event from "./components/1-events/Event";
 
 function App() {
   return (
-    <div className="App">
-   
+    <div>
+      <Event />
     </div>
   );
 }
