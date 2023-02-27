@@ -35,7 +35,9 @@ const UseStateCounter = () => {
       <button onClick={increment} className="btn btn-success">
         INC
       </button>
-      <button className="btn btn-danger">CLR</button>
+      <button onClick={() => setCount(0)} className="btn btn-danger">
+        CLR
+      </button>
       <button onClick={() => setCount(count - 1)} className="btn btn-warning">
         DEC
       </button>
