@@ -15,6 +15,7 @@ export class Counter extends React.Component {
   constructor(props) {
     super(props);
 
+    // Starting value for count
     this.state = {
       count: 0,
     };
@@ -25,6 +26,11 @@ export class Counter extends React.Component {
     //? Increment methodunun Counter class'ina baglanmasi.
     this.increment = this.increment.bind(this);
   }
+
+  //! Yazmis oldugumuz metotlar default olarak classa baglanmaz.
+  //! Ancak, React built-in fonksiyonlari baglidir.
+
+  //* Bunun icin metotlarimizi ya constructor icerisinde baglamaliyiz yada otomatik baglamayi saglayan arrow fonksiyonlarini kullanmaliyiz.
 
   increment() {
     this.setState({
@@ -47,7 +53,12 @@ export class Counter extends React.Component {
         <button onClick={this.increment} className="btn btn-success">
           INC
         </button>
-        <button className="btn btn-danger">CLEAR</button>
+        <button
+          onClick={() => this.setState({ count: 0 })}
+          className="btn btn-danger"
+        >
+          CLR
+        </button>
         <button onClick={this.decrement} className="btn btn-warning">
           DEC
         </button>
