@@ -16,9 +16,21 @@ const Event = () => {
     alert("Hi Events");
   };
 
+  const handleReset = (msg) => {
+    console.log(msg);
+  };
+
   return (
     <div>
       <button onClick={handleClick}>Click</button>
+      {/* By using Arrow function here, you will avoid by default invoking. */}
+
+      {/* Eger bir event fonksiyonunun paremetresi olmasi gerekiyorsa
+      bu fonksiyon bir arrow fonks. tarafindan  cagrilmalidir. Aksi
+      takdirde event fonksiyonu event gerceklesmeden cagirilir */}
+      <button onClick={() => handleReset("Please clear the text!")}>
+        Reset
+      </button>
     </div>
   );
 };
