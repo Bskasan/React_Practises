@@ -42,7 +42,7 @@ const Form = () => {
             className="form-control"
             id="username"
             onChange={handleUsername}
-            value={username}
+            value={username || " "}
             required
           />
         </div>
