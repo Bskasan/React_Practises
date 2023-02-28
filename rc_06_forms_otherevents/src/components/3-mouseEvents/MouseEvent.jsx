@@ -6,11 +6,26 @@ const MouseEvent = () => {
   const [visible, setVisible] = useState(false);
   const [toggle, setToggle] = useState(false);
 
+  const [coordX, setCoordX] = useState();
+  const [coordY, setCoordY] = useState();
+
   console.log(toggle);
 
   const handleDoubleClick = (e) => {
-    console.log(e);
     setToggle(!toggle);
+    //console.log(toggle); //? State'in guncellenmis degeri burada gorulemeyebilir. Cunku react'da state'ler toplu bir sekilde ve async olarak guncellenir.
+
+    toggle
+      ? (e.target.className = "bg-success text-light w-50 p-4 my-4")
+      : (e.target.className = "bg-danger text-light w-50 p-4 my-4");
+  };
+
+  //? mouseMove event
+  const handleMouseMove = (e) => {
+    //setCoordX(e.nativeEvent.offsetX); //! Göreceli
+    //setCoordY(e.nativeEvent.offsetY);
+    setCoordX(e.pageX);
+    setCoordY(e.pageY);
   };
 
   return (
@@ -37,15 +52,19 @@ const MouseEvent = () => {
         todo item 2
       </div>
 
-      <div id="todo-3" className="bg-success text-light w-50 p-4 my-4">
+      <div
+        id="todo-3"
+        className="bg-success text-light w-50 p-4 my-4"
+        onMouseMove={handleMouseMove}
+      >
         todo item 3
       </div>
 
       <p>X and Y</p>
 
+      <p>X and Y</p>
       <p className="text-danger fw-bold">
-        {"X"}
-        {"Y"}
+        {coordX} {coordY}
       </p>
     </div>
   );
