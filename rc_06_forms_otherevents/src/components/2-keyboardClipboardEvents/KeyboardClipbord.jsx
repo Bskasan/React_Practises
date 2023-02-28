@@ -18,7 +18,19 @@ const KeyboardClipbord = () => {
     e.target.style.fontSize = "30px";
     e.target.style.border = "3px solid red";
     e.target.style.backgroundColor = "lightgrey";
-    alert(`${e.target.value}`);
+
+    e.target.value = e.clipboardData.getData("text").toLocaleUpperCase();
+    e.preventDefault();
+  };
+
+  const handleParCopy = (e) => {
+    e.preventDefault();
+    alert("You cannot copy this text.");
+  };
+
+  const handleParCut = (e) => {
+    e.preventDefault();
+    alert("You cannot cut this text.");
   };
 
   return (
@@ -35,9 +47,10 @@ const KeyboardClipbord = () => {
         }}
         onKeyDown={handleKeyDown}
       />
-
-      <p className="text-start mt-4 fs-3">{inputData.toLowerCase()}</p>
-
+      <div className="text-start mt-4 fs-3">
+        <p>{inputData.toLowerCase()}</p>
+        <h6 onCopy={handleParCopy} onCut={handleParCut}>Copied Input Data</h6>
+      </div>
       <textarea
         className="form-control"
         name="textarea"
