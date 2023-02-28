@@ -5,8 +5,11 @@ const KeyboardClipbord = () => {
 
   function handleKeyDown(e) {
     console.log(e.keyCode);
+
+    //? To prevent number inputs
     if (e.keyCode >= 48 && e.keyCode <= 57) {
       alert("Please don't enter a number!!!");
+      e.preventDefault();
     }
   }
 
