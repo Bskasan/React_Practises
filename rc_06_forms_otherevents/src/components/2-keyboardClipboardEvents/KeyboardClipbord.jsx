@@ -13,6 +13,14 @@ const KeyboardClipbord = () => {
     }
   }
 
+  const handleAreaPast = (e) => {
+    console.log(e);
+    e.target.style.fontSize = "30px";
+    e.target.style.border = "3px solid red";
+    e.target.style.backgroundColor = "lightgrey";
+    alert(`${e.target.value}`);
+  };
+
   return (
     <div>
       <h2 className="display-5 text-danger">Keyboard-Clipboard Event</h2>
@@ -36,6 +44,7 @@ const KeyboardClipbord = () => {
         id="textarea"
         cols="30"
         rows="10"
+        onPaste={handleAreaPast}
       ></textarea>
     </div>
   );
