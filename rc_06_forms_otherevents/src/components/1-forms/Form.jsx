@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("-------");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
 
   return (
     <div>
@@ -11,9 +15,15 @@ const Form = () => {
       <form>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            Username
+            Username : <span>{username}</span>
           </label>
-          <input type="text" className="form-control" id="username" />
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            onChange={handleUsername}
+            value={username}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
