@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 
 const FormWithObject = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    address: "",
+  });
 
-  const handleUsername = (e) => {
-    setUsername(e.target.value);
+  const { username, email, password, address } = formData;
+
+  const handleFormData = (e) => {
+    //console.log(e.target.value);
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert(`
-    username: ${username}
-    email: ${email}
-    password: ${password}
+       username:${username}
+       email:${email}
+       password:${password}
+       address:${address}
     `);
-
-    //* Debug on Console
-    console.log(`
-    username: ${username}
-    email: ${email}
-    password: ${password}
-    `);
-
-    setEmail("");
-    setUsername("");
-    setPassword("");
-  }
+    setFormData({ username: "", email: "", password: "", address: "" });
+  };
 
   return (
     <div>
@@ -41,7 +38,7 @@ const FormWithObject = () => {
             type="text"
             className="form-control"
             id="username"
-            onChange={handleUsername}
+            onChange={handleFormData}
             value={username}
             required
           />
@@ -54,7 +51,7 @@ const FormWithObject = () => {
             type="email"
             className="form-control"
             id="email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleFormData}
             value={email}
             required
           />
@@ -67,8 +64,21 @@ const FormWithObject = () => {
             type="password"
             className="form-control"
             id="password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleFormData}
             value={password}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="address" className="form-label">
+            Address
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="address"
+            onChange={handleFormData}
+            value={address}
             required
           />
         </div>
