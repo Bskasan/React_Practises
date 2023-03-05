@@ -6,9 +6,15 @@ const PlayerCard = ({ name, img, statistics }) => {
 
   //const { name, img, statistics } = props;
 
+  const handleClick = () => {
+    setShowImg(!showImg);
+  };
+
   return (
     <Card
-      onClick={() => setShowImg(!showImg)}
+      //? Two methods for onClick
+      //onClick={() => setShowImg(!showImg)}
+      onClick={handleClick}
       className="rounded-2 m-auto player-card"
       role="button"
     >
