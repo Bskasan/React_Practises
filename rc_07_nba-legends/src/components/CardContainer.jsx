@@ -3,9 +3,9 @@ import { data } from "../helpers/data";
 
 const CardContainer = () => {
   return (
-    <Container>
+    <Container className="card-container rounded-4 my-4 p-3"> 
       {data.map((player) => {
-        console.log(player);
+        <p>{player.name}</p>
       })}
     </Container>
   );
