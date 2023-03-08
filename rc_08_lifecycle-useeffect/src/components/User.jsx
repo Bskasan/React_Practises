@@ -27,10 +27,14 @@ const User = () => {
         {/*! Optional Chaining */}
         {user?.name?.first} {user?.name?.last}
       </h1>
-      <img src={user?.picture?.large} alt="profile-picture" />
+      <img
+        className="rounded-circle"
+        src={user?.picture?.large}
+        alt="profile-picture"
+      />
       <h4>{user?.email}</h4>
       <h5>{user?.phone}</h5>
-      <p>{user?.dob?.date}</p>
+      <p>{new Date(user?.dob?.date).toLocaleDateString("en-US")}</p>
 
       <button onClick={getUser} className="btn btn-warning">
         Get User
