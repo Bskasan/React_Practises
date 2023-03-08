@@ -19,7 +19,9 @@
 import React from "react";
 
 class LifeCycleMethods extends React.Component {
+     //! 1-) Bir componentin olsuturulmasinda cagrilir
   constructor(props) {
+    console.log("1 - Constructor running");
     super(props);
     this.state = {
       count: 0,
@@ -32,7 +34,16 @@ class LifeCycleMethods extends React.Component {
     });
   };
 
+  //! 3-) Bir component DOM agacina eklendiginde calistirilir.
+  //! (İlk render sonrasi).
+  //! Her yasam dongusu icin bir kere calisir.
+  componentDidMount() {
+    console.log("3 - Component Did Mount Method!!!");
+  }
+
   render() {
+    //! 2-) Her bir state yada prop degistiginde (render) cagrilir
+    console.log("2 - Rendered");
     return (
       <div className="container text-center">
         <h1 className="text-danger">LIFECYCLE METHODS</h1>
