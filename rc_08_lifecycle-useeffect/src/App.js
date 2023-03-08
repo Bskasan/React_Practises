@@ -1,7 +1,9 @@
+import LifeCycleMethods from "./components/LifeCycleMethods";
+
 function App() {
   return (
     <div>
-      <h1> LIFECYCLE METHODS </h1>
+      <LifeCycleMethods />
     </div>
   );
 }
