@@ -35,16 +35,35 @@ import React, { useEffect, useState } from "react";
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    //! componentDidMount (if dependency array is empty) OR
-    //! componentdidmount + componentdidUpdate [count] hem mount aninda hemde count stati guncellendiginde calisir.
+  //   useEffect(() => {
+  //     //! componentDidMount (if dependency array is empty) OR
+  //     //! componentdidmount + componentdidUpdate [count] hem mount aninda hemde count stati guncellendiginde calisir.
 
-    //!fetch, async-await, localStorage, setTimeout, setInterval();
-    console.log("componentDidMount");
-    //return () => {
-    //? Cleanup function
-    //};
-  }, []); //? Dependency Array
+  //     //!fetch, async-await, localStorage, setTimeout, setInterval();
+  //     console.log("componentDidMount");
+  //     setTimeout(() => alert("Data Fetched!"), 1000);
+  //     //return () => {
+  //     //? Cleanup function
+  //     //};
+  //   }, []); //? Dependency Array
+
+  //   useEffect(() => {
+  //     console.log("componentDidMount + componenentDidUpdate")
+  //     setTimeout(() => alert("Data Fetched"), 1000)
+  //   }, [count]) //? Dependecy array = count state
+
+  const fetchData = () => {
+    console.log("Data Fetching");
+  };
+
+  useEffect(() => {
+    console.log("Mounting");
+    const timer = setInterval(fetchData, 1000);
+    return () => {
+      clearInterval(timer);
+      console.log("Unmounting");
+    };
+  }, []);
 
   console.log("Rendering");
 
