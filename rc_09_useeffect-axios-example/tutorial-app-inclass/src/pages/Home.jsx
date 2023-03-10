@@ -16,6 +16,8 @@ const Home = () => {
     } catch (error) {
       console.log("Something went wrong!");
     }
+
+    getTutorials();
   };
 
   console.log(tutorials);
@@ -29,7 +31,7 @@ const Home = () => {
 
   return (
     <div>
-      <AddTutorial />
+      <AddTutorial getTutorials={getTutorials} />
       <TutorialList tutorials={tutorials} />
     </div>
   );
