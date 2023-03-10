@@ -68,13 +68,13 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     className="me-2 text-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#edit-tutor"
-                    onClick={() =>
-                      editTutorial({
-                        id: 1116,
-                        title: "Unreal Engine",
-                        description: "Best GameEngine for PC",
-                      })
-                    }
+                    // onClick={() =>
+                    //   editTutorial({
+                    //     id: 1116,
+                    //     title: "Unreal Engine",
+                    //     description: "Best GameEngine for PC",
+                    //   })
+                    // }
                   />
                   <AiFillDelete
                     size={22}
