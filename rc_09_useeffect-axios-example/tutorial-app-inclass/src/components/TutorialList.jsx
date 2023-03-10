@@ -1,5 +1,8 @@
 import React from "react";
 import EditTutorial from "./EditTutorial";
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import axios from "axios";
 
 const TutorialList = () => {
   const tutorials = [
@@ -55,7 +58,7 @@ const TutorialList = () => {
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={() => deleteTutorial(id)}
+                    //onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
