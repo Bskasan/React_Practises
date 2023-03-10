@@ -1,6 +1,6 @@
 const EditTutorial = () => {
   return (
-    <div className="modal" tabIndex="-1" id="edit-tutor">
+    <div className="modal" tabIndex="-1" id="edit-tutor" >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
