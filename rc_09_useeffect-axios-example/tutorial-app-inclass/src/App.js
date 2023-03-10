@@ -1,7 +1,11 @@
+import Home from "./pages/Home";
+
 function App() {
-  return <div>
-    <h1> React 09</h1>
-  </div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
 
 export default App;
