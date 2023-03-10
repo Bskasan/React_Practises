@@ -17,7 +17,7 @@ import axios from "axios";
 //     },
 //   ];
 
-const TutorialList = ({ tutorials }) => {
+const TutorialList = ({ tutorials, getTutorials }) => {
   const deleteTutorial = async (id) => {
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
 
@@ -26,7 +26,20 @@ const TutorialList = ({ tutorials }) => {
     } catch (error) {
       console.log("Something Went Wrong!!!");
     }
+
+    getTutorials();
   };
+
+  const editTutorial = async ({ id, title, description }) => {
+    const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
+
+    try {
+      await axios.put(`${BASE_URL}/${id}/`, { title, description });
+    } catch (error) {
+      console.log(`Something Went Wrong!!! - ${error}`);
+    }
+  };
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -55,13 +68,13 @@ const TutorialList = ({ tutorials }) => {
                     className="me-2 text-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#edit-tutor"
-                    // onClick={() =>
-                    //   editTutorial({
-                    //     id: 502,
-                    //     title: "dokanmayin",
-                    //     description: "REACT",
-                    //   })
-                    // }
+                    onClick={() =>
+                      editTutorial({
+                        id: 1116,
+                        title: "Unreal Engine",
+                        description: "Best GameEngine for PC",
+                      })
+                    }
                   />
                   <AiFillDelete
                     size={22}
