@@ -18,6 +18,15 @@ import axios from "axios";
 //   ];
 
 const TutorialList = ({ tutorials }) => {
+  const deleteTutorial = async (id) => {
+    const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
+
+    try {
+      await axios.delete(`${BASE_URL}/${id}/`);
+    } catch (error) {
+      console.log("Something Went Wrong!!!");
+    }
+  };
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -58,7 +67,7 @@ const TutorialList = ({ tutorials }) => {
                     size={22}
                     type="button"
                     className="text-danger "
-                    //onClick={() => deleteTutorial(id)}
+                    onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
