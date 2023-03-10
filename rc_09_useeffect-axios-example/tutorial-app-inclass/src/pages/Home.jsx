@@ -9,9 +9,13 @@ const Home = () => {
   const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
 
   const getTutorials = async () => {
-    //! Destructuring
-    const { data } = await axios(BASE_URL);
-    setTutorials(data);
+    try {
+      //! Destructuring
+      const { data } = await axios(BASE_URL);
+      setTutorials(data);
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   };
 
   console.log(tutorials);
