@@ -6,7 +6,10 @@ const AddTutorial = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    //? ES6 -> you don't need to write key-value, if the key names are same.
+    //? const newTutorial = { ti: title, de: description };
+    const newTutorial = { title, description };
+    console.log(newTutorial);
     setDescription("");
     setTitle("");
   };
