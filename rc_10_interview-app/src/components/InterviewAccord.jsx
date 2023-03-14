@@ -1,4 +1,5 @@
 import React from "react";
+import Question from "./Question";
 
 const InterviewAccord = (props) => {
   const { data } = props;
@@ -6,8 +7,8 @@ const InterviewAccord = (props) => {
   return (
     <div className="row">
       {data.map((item) => {
-        const { id, question, answer } = item;
-        
+        /*item -> To access each element in the array. */
+        return <Question />;
       })}
     </div>
   );
