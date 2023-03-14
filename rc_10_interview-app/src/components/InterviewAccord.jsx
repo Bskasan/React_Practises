@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const InterviewAccord = () => {
+const InterviewAccord = (props) => {
+  const { data } = props;
+  console.log("data", data);
   return (
-    <div>InterviewAccord</div>
-  )
-}
+    <div className="row">
+      {data.map((item) => {
+        const { id, question, answer } = item;
+        
+      })}
+    </div>
+  );
+};
 
-export default InterviewAccord
+export default InterviewAccord;

@@ -1,5 +1,6 @@
 import "./App.css";
 import InterviewAccord from "./components/InterviewAccord";
+import data from "./helper/data";
 
 function App() {
   return (
@@ -8,8 +9,9 @@ function App() {
         <h2> REACT Interview Questions and Answers</h2>
       </div>
       <div className="app">
-        <div>
-          <InterviewAccord />
+        <div className="main">
+          {/* We can give any name as props */}
+          <InterviewAccord data={data} />
         </div>
       </div>
     </>
