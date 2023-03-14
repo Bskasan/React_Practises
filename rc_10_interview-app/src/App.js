@@ -1,9 +1,17 @@
 import "./App.css";
+import InterviewAccord from "./components/InterviewAccord";
 
 function App() {
   return (
     <>
-      <h1>Interview App</h1>
+      <div className="header">
+        <h2> REACT Interview Questions and Answers</h2>
+      </div>
+      <div className="app">
+        <div>
+          <InterviewAccord />
+        </div>
+      </div>
     </>
   );
 }
