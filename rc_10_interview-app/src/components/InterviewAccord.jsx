@@ -8,7 +8,7 @@ const InterviewAccord = (props) => {
     <div className="row">
       {data.map((item) => {
         /*item -> To access each element in the array. */
-        return <Question />;
+        return <Question key={item.id} {...item} />;
       })}
     </div>
   );
