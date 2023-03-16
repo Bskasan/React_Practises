@@ -40,6 +40,8 @@ const Doctors = ({ doctors, appointments, setAppointments }) => {
         show={show}
         handleClose={() => setShow(false)}
         drName={selectedDrName}
+        appointments={appointments}
+        setAppointments={setAppointments}
       />
     </Container>
   );

@@ -32,7 +32,10 @@ const Home = () => {
         appointments={appointments}
         setAppointments={setAppointments}
       />
-      <AppointmentList />
+      <AppointmentList
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
     </main>
   );
 };
