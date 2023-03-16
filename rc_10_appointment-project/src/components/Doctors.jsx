@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { AddModal } from "./AddModal";
 
-const Doctors = ({ doctors }) => {
+const Doctors = ({ doctors, appointments, setAppointments }) => {
   const [show, setShow] = useState(false);
   const [selectedDrName, setSelectedDrName] = useState(false);
 
