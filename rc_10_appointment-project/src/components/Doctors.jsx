@@ -7,10 +7,14 @@ import { AddModal } from "./AddModal";
 
 const Doctors = ({ doctors }) => {
   const [show, setShow] = useState(false);
+  const [selectedDrName, setSelectedDrName] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (drName) => {
     setShow(true);
+    setSelectedDrName(drName);
   };
+
+  console.log(selectedDrName);
 
   return (
     <Container className="p-2">
@@ -24,7 +28,7 @@ const Doctors = ({ doctors }) => {
               src={dr.img}
               alt={dr.name}
               className="img-thumbnail doctor-img"
-              onClick={handleClick}
+              onClick={() => handleClick(dr.name)}
             />
             <h5>{dr.name}</h5>
             <h6>{dr.dep}</h6>
