@@ -10,6 +10,7 @@ const Nav = () => {
         <Link to="/instructors">Instructors</Link>
       </li>
       <li>
+        {/* Better for styling */}
         <NavLink
           to="/contact"
           style={({ isActive }) => ({ color: isActive && "red" })}
