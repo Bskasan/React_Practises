@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import People from "./pages/People";
 import Paths from "./pages/Paths";
 import { Routes, Route } from "react-router-dom";
+import PersonDetail from "./pages/PersonDetail";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/people" element={<People />} />
+        {/* Dynamic Link and  Route*/}
+        <Route path="/people/:id" element={<PersonDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/paths" element={<Paths />} />
         <Route path="*" element={<NotFound />} />
