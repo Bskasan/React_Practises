@@ -10,6 +10,7 @@ import PersonDetail from "./pages/PersonDetail";
 import FullStack from "./pages/Fullstack";
 import Aws from "./pages/Aws";
 import ReactJS from "./pages/ReactJS";
+import PrivateRouter from "./pages/PrivateRouter";
 
 function App() {
   return (
@@ -28,6 +29,11 @@ function App() {
           </Route>
           <Route path="aws" element={<Aws />} />
         </Route>
+
+        <Route path="/contact" element={<PrivateRouter />}>
+          <Route path="" element={<Contact />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
