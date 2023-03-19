@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 //? Link, NavLink ve Navigate componentleri declarative routing
 //? gerceklestirmek icin kullanilir.
@@ -16,25 +16,25 @@ import { Link, Navigate, useNavigate } from "react-router-dom"
 //* olarak yonledirme yapmak icin kullanilabilir.
 
 const People = () => {
-  const [people, setPeople] = useState([])
-  const navigate = useNavigate()
+  const [people, setPeople] = useState([]);
+  const navigate = useNavigate();
 
   const getPeople = () => {
     fetch("https://reqres.in/api/users")
       .then((res) => res.json())
       .then((data) => setPeople(data.data))
-      .catch((err) => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
   useEffect(() => {
-    getPeople()
-  }, [])
+    getPeople();
+  }, []);
 
   return (
     <div className="container text-center mt-4">
       <h1>PEOPLE LIST</h1>
       <div className="row justify-content-center g-3">
         {people?.map((p) => {
-          const { id, first_name, last_name, avatar } = p
+          const { id, first_name, last_name, avatar } = p;
           return (
             <div
               key={id}
@@ -43,6 +43,7 @@ const People = () => {
               //? Absolute path (tam adres vermek)
               // onClick={() => navigate(`/people/${id}`)}
               //! Relative path (goreceli adres vermek)
+              //! `navigate` allows us to send data globally
               onClick={() => navigate(`${id}`, { state: p })}
             >
               <img className="rounded" src={avatar} alt="img" />
@@ -53,11 +54,11 @@ const People = () => {
               {/* <Link to={`/people/${id}`}> Deneme</Link>
               <Navigate to={`/people/${id}`} /> */}
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default People
+export default People;

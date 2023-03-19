@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { useLocation, useParams } from "react-router-dom";
 
 const Paths = () => {
-  return (
-    <div>Paths</div>
-  )
-}
+  const { state } = useLocation();
+  const { id } = useParams();
 
-export default Paths
+  console.log(state, id);
+
+  return <div>Paths</div>;
+};
+
+export default Paths;
