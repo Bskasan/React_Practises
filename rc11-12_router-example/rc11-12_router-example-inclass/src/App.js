@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import FullStack from "./pages/Fullstack";
 import Aws from "./pages/Aws";
+import ReactJS from "./pages/ReactJS";
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         {/* Nested Routes */}
         <Route path="/paths" element={<Paths />}>
-          <Route path="fullstack" element={<FullStack />} />
+          <Route path="fullstack" element={<FullStack />}>
+            <Route path="react" element={<ReactJS />} />
+          </Route>
           <Route path="aws" element={<Aws />} />
         </Route>
         <Route path="*" element={<NotFound />} />

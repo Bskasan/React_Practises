@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 const FullStack = () => {
   return (
@@ -18,7 +18,7 @@ const FullStack = () => {
 
       <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default FullStack
+export default FullStack;
