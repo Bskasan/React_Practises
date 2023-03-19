@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Login from "./Login";
 
 //? Bu kisim gercekte Global State'lerde tutulur. (Context API, Redux, Mobx --> Global State Management Libraries)
@@ -9,7 +9,7 @@ import Login from "./Login";
 const isSigned = true;
 
 const PrivateRouter = () => {
-  return <div> {isSigned ? <Outlet /> : <Login />}</div>;
+  return <div> {isSigned ? <Outlet /> : <Navigate to="/login" />}</div>;
 };
 
 export default PrivateRouter;
