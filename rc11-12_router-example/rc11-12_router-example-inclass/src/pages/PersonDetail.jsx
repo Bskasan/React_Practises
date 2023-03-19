@@ -1,49 +1,54 @@
-import { useEffect, useState } from "react"
-import { useLocation, useParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-import NotFound from "./NotFound"
-import spinner from "../img/Spinner-2.gif"
+import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import NotFound from "./NotFound";
+import spinner from "../img/Spinner-2.gif";
 
 const PersonDetail = () => {
   //! navigate ile gonderilen state'i yakalamak icin useLocation Hook'u kullanilabilir.
   //! Bu durumda veri, state ile geldigi icin yeniden fetch yapilmasina gerek kalmaz
   // const { state: person } = useLocation()
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   //! Linkteki parametreyi almak icin useParams Hook'u kullanilabilir.
-  const { id } = useParams()
-  const [person, setPerson] = useState({})
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const { id } = useParams();
+  const [person, setPerson] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getPerson = () => {
     fetch(`https://reqres.in/api/users/${id}`)
       .then((res) => {
         if (!res.ok) {
-          setError(true)
-          setLoading(false)
-          throw new Error("User can not be found")
+          setError(true);
+          setLoading(false);
+          throw new Error("User can not be found");
         }
-        return res.json()
+        return res.json();
       })
       .then((data) => {
-        setLoading(false)
-        setPerson(data.data)
+        setLoading(false);
+        setPerson(data.data);
       })
-      .catch((err) => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
   useEffect(() => {
-    getPerson()
-  }, [])
+    getPerson();
+  }, []);
 
   if (error) {
-    return <NotFound />
+    return (
+      <>
+        <NotFound />
+        <h1 className="text-center text-danger mt-3">Something Went Wrong!</h1>
+      </>
+    );
   } else if (loading) {
     return (
       <div className="text-center mt-4">
         <img src={spinner} alt="spinner" />
       </div>
-    )
+    );
   } else {
     return (
       <div className="container text-center">
@@ -64,8 +69,8 @@ const PersonDetail = () => {
           </button>
         </div>
       </div>
-    )
+    );
   }
-}
+};
 
-export default PersonDetail
+export default PersonDetail;
