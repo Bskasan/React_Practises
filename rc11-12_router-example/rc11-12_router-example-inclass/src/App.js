@@ -7,6 +7,8 @@ import People from "./pages/People";
 import Paths from "./pages/Paths";
 import { Routes, Route } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
+import FullStack from "./pages/Fullstack";
+import Aws from "./pages/Aws";
 
 function App() {
   return (
@@ -18,7 +20,11 @@ function App() {
         {/* Dynamic Link and  Route*/}
         <Route path="/people/:id" element={<PersonDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/paths" element={<Paths />} />
+        {/* Nested Routes */}
+        <Route path="/paths" element={<Paths />}>
+          <Route path="fullstack" element={<FullStack />} />
+          <Route path="aws" element={<Aws />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

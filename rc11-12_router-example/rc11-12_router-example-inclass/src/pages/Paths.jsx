@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Paths = () => {
   return (
     <div className="container mt-4">
+      
       <h1>
         Online IT Courses to Become a Qualified IT Professional with Clarusway
       </h1>
@@ -15,15 +16,16 @@ const Paths = () => {
       </p>
       <div>
         {/* Relative */}
-        <Link className="btn btn-success w-50" to="fullstack/react">
+        <Link className="btn btn-success w-50" to="fullstack">
           {/* Absolute */}
           {/* <Link className="btn btn-success w-50" to="/paths/fullstack"> */}
           Fullstack
         </Link>
-        <Link className="btn btn-warning w-50" to="">
+        <Link className="btn btn-warning w-50" to="aws">
           Aws-Devops
         </Link>
       </div>
+      <Outlet />
     </div>
   );
 };
