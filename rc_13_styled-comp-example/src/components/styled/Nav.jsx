@@ -8,6 +8,10 @@ const Nav = styled.nav`
   @media (max-width: 700px) {
     flex-direction: column;
   }
+
+  @media (max-width: 357px) {
+    text-align: center;
+  }
 `;
 
 export default Nav;
