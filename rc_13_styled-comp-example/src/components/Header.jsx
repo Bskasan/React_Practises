@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./styled/Button";
 import Flex from "./styled/Flex";
 import Nav from "./styled/Nav";
+import Image from "./styled/Image";
 
 const Header = () => {
   return (
@@ -27,6 +28,7 @@ const Header = () => {
           </p>
           <Button bg="#AF3A53">Start Your New Career</Button>
         </div>
+        <Image src="./images/hero.jpg"></Image>
       </Flex>
     </div>
   );
