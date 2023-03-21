@@ -4,7 +4,7 @@ import HeaderText from "./components/HeaderText";
 function App() {
   return (
     <>
-      <HeaderText color>Styled-Components</HeaderText>
+      <HeaderText color="hotpink">Styled-Components</HeaderText>
       <Button>Send</Button>
       <Button primary>Send</Button>
       <ExtButton react>Study</ExtButton>
