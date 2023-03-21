@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Links = styled.a`
   text-decoration: none;
@@ -8,6 +8,14 @@ const Links = styled.a`
   &:hover {
     font-weight: 700;
   }
+
+  ${({ small }) =>
+    small &&
+    css`
+      background-color: black;
+      color: #61dbfb;
+      padding: 1rem;
+    `}
 `;
 
 export default Links;

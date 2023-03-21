@@ -21,6 +21,9 @@ function App() {
         <Links href="https://github.com/Bskasan" target="_blank">
           --- Bekir's Personal Website ---
         </Links>
+        <Links small href="https://www.linkedin.com/in/bekirskasan/" target="_blank">
+          --- Bekir's LinkedIn ---
+        </Links>
       </Sarmal>
     </>
   );
