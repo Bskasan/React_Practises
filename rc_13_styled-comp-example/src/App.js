@@ -1,10 +1,11 @@
-
+import Button from "./components/styled/Button";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <Button color="#AF3A53"> Apply Courses</Button>
+      <Button bg="#AF3A53"> Talk to Advisor</Button>
+    </>
   );
 }
 
