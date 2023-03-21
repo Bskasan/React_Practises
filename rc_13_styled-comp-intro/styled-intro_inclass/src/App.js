@@ -1,9 +1,10 @@
 import { Button, ExtButton } from "./components/Button.styled";
+import HeaderText from "./components/HeaderText";
 
 function App() {
   return (
     <>
-      <h1>Styled-Components</h1>
+      <HeaderText color>Styled-Components</HeaderText>
       <Button>Send</Button>
       <Button primary>Send</Button>
       <ExtButton react>Study</ExtButton>

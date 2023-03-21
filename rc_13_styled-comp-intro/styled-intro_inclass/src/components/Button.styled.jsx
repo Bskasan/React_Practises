@@ -5,7 +5,7 @@ export const Button = styled.button`
   color: white;*/
 
   background-color: ${(props) => (props.primary ? "white" : "hotpink")};
-    color: ${({ primary }) => (primary ? "hotpink" : "white")}
+  color: ${({ primary }) => (primary ? "hotpink" : "white")}
   width: 8rem;
   font-size: 1.1rem;
   padding: 1rem 2rem;
@@ -19,8 +19,10 @@ export const Button = styled.button`
   }
 `;
 
+/* Extension of Button above (Overriding) */
+
 export const ExtButton = styled(Button)`
   background-color: ${({ react }) => (react ? "B2508A" : "green")};
   color: ${({ react }) => (react ? "white" : "yellow")};
-  border-color: ${({ react }) => (react ? "white" : "yellow")};
+  border-color: ${({ react }) => react && "red"};
 `;
