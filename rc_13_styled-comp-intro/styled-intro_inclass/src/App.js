@@ -1,4 +1,4 @@
-import { Button } from "./components/Button.styled";
+import { Button, ExtButton } from "./components/Button.styled";
 
 function App() {
   return (
@@ -6,6 +6,8 @@ function App() {
       <h1>Styled-Components</h1>
       <Button>Send</Button>
       <Button primary>Send</Button>
+      <ExtButton react>Study</ExtButton>
+      <ExtButton>Study More!</ExtButton>
     </>
   );
 }

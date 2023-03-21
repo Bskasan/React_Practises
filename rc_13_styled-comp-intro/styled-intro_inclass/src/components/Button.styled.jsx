@@ -18,3 +18,9 @@ export const Button = styled.button`
     background-color: #ff69b4a5;
   }
 `;
+
+export const ExtButton = styled(Button)`
+  background-color: ${({ react }) => (react ? "B2508A" : "green")};
+  color: ${({ react }) => (react ? "white" : "yellow")};
+  border-color: ${({ react }) => (react ? "white" : "yellow")};
+`;
