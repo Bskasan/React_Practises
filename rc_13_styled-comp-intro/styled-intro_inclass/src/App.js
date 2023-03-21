@@ -5,6 +5,7 @@ function App() {
     <>
       <h1>Styled-Components</h1>
       <Button>Send</Button>
+      <Button primary>Send</Button>
     </>
   );
 }
