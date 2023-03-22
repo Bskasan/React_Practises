@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  let navigate = useNavigate();
   return (
     <div>
       <h1>THIS IS ABOUT PAGE</h1>
@@ -13,6 +15,13 @@ const About = () => {
         mastering HTML, CSS, JavaScript, and React. Ready to bring my passion
         and skills to a new challenge as a front-end web developer.
       </p>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        ...Go to Home Page...
+      </button>
     </div>
   );
 };
