@@ -4,19 +4,18 @@ import CardTotal from "../components/CardTotal";
 import axios from "axios";
 
 const ProductList = () => {
-  const ProductList = () => {
-    const url = process.env.REACT_APP_API_URL;
-    console.log("url", url);
-    const [products, setProducts] = useState([]);
+  const url = process.env.REACT_APP_API_URL;
+  console.log("url", url);
+  const [products, setProducts] = useState([]);
 
-    const getProducts = async () => {
-      try {
-        const { data } = await axios("");
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const getProducts = async () => {
+    console.log("merhaba");
+    try {
+      const { data } = await axios(url);
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
