@@ -8,7 +8,7 @@ const ProductCard = ({ item, getProducts }) => {
   //? HANDLE MINUS FUNC.
   const handleMinus = async () => {
     try {
-      await axios.delete(`${url}/${id}`, {
+      await axios.put(`${url}/${id}`, {
         ...item,
         amount: amount - 1,
       });
@@ -21,7 +21,7 @@ const ProductCard = ({ item, getProducts }) => {
   //? HANDLE ADDITION (PLUS) FUNC.
   const handlePlus = async () => {
     try {
-      await axios.delete(`${url}/${id}`, {
+      await axios.put(`${url}/${id}`, {
         ...item,
         amount: amount + 1,
       });
