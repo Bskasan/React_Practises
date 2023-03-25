@@ -1,17 +1,19 @@
 import axios from "axios";
 import React from "react";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, getProducts }) => {
   const { name, image, price, dampingRate, amount, id } = item;
+  const url = process.env.REACT_APP_API_URL;
 
   const handleMinus = () => {};
   const handlePlus = () => {};
   const handleRemove = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/${id}`);
+      await axios.delete(`${url}/${id}`);
     } catch (error) {
       console.log(error);
     }
+    getProducts();
   };
 
   return (
