@@ -5,8 +5,33 @@ const ProductCard = ({ item, getProducts }) => {
   const { name, image, price, dampingRate, amount, id } = item;
   const url = process.env.REACT_APP_API_URL;
 
-  const handleMinus = () => {};
-  const handlePlus = () => {};
+  //? HANDLE MINUS FUNC.
+  const handleMinus = async () => {
+    try {
+      await axios.delete(`${url}/${id}`, {
+        ...item,
+        amount: amount - 1,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    getProducts();
+  };
+
+  //? HANDLE ADDITION (PLUS) FUNC.
+  const handlePlus = async () => {
+    try {
+      await axios.delete(`${url}/${id}`, {
+        ...item,
+        amount: amount + 1,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    getProducts();
+  };
+
+  //? HANDLE REMOVE FUNC.
   const handleRemove = async () => {
     try {
       await axios.delete(`${url}/${id}`);
