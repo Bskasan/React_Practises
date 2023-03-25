@@ -7,15 +7,19 @@ const ProductCard = ({ item, getProducts }) => {
 
   //? HANDLE MINUS FUNC.
   const handleMinus = async () => {
-    try {
-      await axios.put(`${url}/${id}`, {
-        ...item,
-        amount: amount - 1,
-      });
-    } catch (error) {
-      console.log(error);
+    if (amount - 1) {
+      try {
+        await axios.put(`${url}/${id}`, {
+          ...item,
+          amount: amount - 1,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      getProducts();
+    } else {
+      handleRemove();
     }
-    getProducts();
   };
 
   //? HANDLE ADDITION (PLUS) FUNC.
