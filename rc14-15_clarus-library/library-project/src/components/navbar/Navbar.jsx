@@ -10,7 +10,7 @@ const Navbar = () => {
       <HamburgerIcon onClick={() => setShowMenu(!showMenu)}>
         {menuIcon}
       </HamburgerIcon>
-      //Gonderdigimiz props u burada karsilamayi unutmayalim.
+      {/* Gonderdigimiz props u burada karsilamayi unutmayalim. */}
       <Menu showMenu={showMenu}>
         <MenuLink to="/">Home</MenuLink>
         <MenuLink to="/about">About</MenuLink>

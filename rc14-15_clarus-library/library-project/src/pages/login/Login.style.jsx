@@ -17,6 +17,24 @@ export const FormContainer = styled(Flex)`
   flex-direction: column;
 `;
 
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 2rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+`;
+
 export const StyledInput = styled.input`
   display: block;
   height: 50px;
