@@ -64,6 +64,7 @@ export const SelectBox = styled.select`
   border-top-right-radius: 1rem;
   background-color: rgb(255, 255, 255, 0.8);
   border-bottom-right-radius: 1rem;
+
   @media (max-width: ${({ theme }) => theme.screens.lg}) {
     width: 100%;
     border-radius: 5px;
