@@ -29,6 +29,7 @@ function App() {
 
           <Route path="people" element={<PrivateRouter />}>
             <Route path="" element={<People />} />
+            <Route path=":id" element={<PersonDetail />} />
           </Route>
           {/* <Route path="people/:id" element={<PersonDetail />} /> */}
 
