@@ -23,6 +23,7 @@ export const useLoginContext = () => {
   return useContext(LoginContext);
 };
 
+//? Usage of custom hook
 //! const {user} = useLoginContext();
 
 export default LoginProvider;
