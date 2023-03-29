@@ -1,24 +1,36 @@
-import { useState } from "react";
+import { useReducer } from "react";
+import { initialState, reducer } from "./reducer";
 
 const UseReducerExample = () => {
-  const [catImage, setCatImage] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [catImage, setCatImage] = useState("");
+  // const [error, setError] = useState("");
+  // const [loading, setLoading] = useState(false);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(state);
+
+  const { loading, error, catImage } = state; //? Destr.
 
   const getCatImage = async () => {
     const url = "https://api.thecatapi.com/v1/images/search";
-    setLoading(true); //? 1- "START"
+    // setLoading(true); //? 1- "START"
+
+    dispatch({ type: "START", payload: "" });
     try {
       const res = await fetch(url);
       const data = await res.json();
-      setCatImage(data[0].url); //? 2-"SUCCESS"
-      setError("");
+
+      // setCatImage(data[0].url); //? 2-"SUCCESS"
+      // setError("");
+
+      dispatch({ type: "SUCCESS", payload: data[0].url });
     } catch (error) {
-      setError("DATA CAN NOT BE FETCHED");
-      setCatImage(""); //? 3-"FAIL"
-      console.log(error);
-    } finally {
-      setLoading(false);
+      // setError("DATA CAN NOT BE FETCHED");
+      // setCatImage(""); //? 3-"FAIL"
+      // console.log(error);
+
+      dispatch({ type: "FAIL", payload: "DATA CAN NOT BE FETCHED" });
     }
   };
   console.log(error);
