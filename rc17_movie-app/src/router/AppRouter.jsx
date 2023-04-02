@@ -8,7 +8,7 @@ import MovieDetail from "../pages/MovieDetail";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -16,7 +16,7 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/details/:id" element={<MovieDetail />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

@@ -8,12 +8,24 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //* birleştirilmiş state
+  // const [info, setInfo] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  // });
+
   const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     createUser(email, password);
   };
+
+  // const { email, password, firstName, lastName } = info;
+  // const hadleChange = (e) =>
+  //   setInfo({ ...info, [e.target.id]: e.target.value });
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
