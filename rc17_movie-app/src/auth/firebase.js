@@ -6,6 +6,8 @@ import { getAuth } from "firebase/auth";
 //! firebase console settings bölümünden firebaseconfig ayarlarını al
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
+
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,

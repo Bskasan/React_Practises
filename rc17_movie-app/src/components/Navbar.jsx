@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-  const currentUser = { displayName: "felix franko" };
+  const { currentUser } = useContext(AuthContext);
+  
+  //const currentUser = { displayName: "felix franko" };
   return (
     <div>
       <nav
@@ -18,7 +22,9 @@ const Navbar = () => {
           {/* Right elements */}
           <div className="relative flex items-center">
             {currentUser && (
-              <h5 className="text-xl capitalize mr-2">{currentUser.displayName}</h5>
+              <h5 className="text-xl capitalize mr-2">
+                {currentUser.displayName}
+              </h5>
             )}
             <div className="relative" data-te-dropdown-ref="">
               <span
