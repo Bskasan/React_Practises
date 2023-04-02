@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
 
 const Navbar = () => {
+  const currentUser = { displayName: "felix franko" };
   return (
     <div>
       <nav
@@ -16,6 +17,9 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="relative flex items-center">
+            {currentUser && (
+              <h5 className="text-xl capitalize mr-2">{currentUser.displayName}</h5>
+            )}
             <div className="relative" data-te-dropdown-ref="">
               <span
                 className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
@@ -25,7 +29,7 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src={avatar}
+                  src={currentUser.photoURL || avatar}
                   className="rounded-full"
                   style={{ height: 25, width: 25 }}
                   alt=""
