@@ -3,6 +3,7 @@ import { auth } from "../auth/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -41,9 +42,14 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const logOut = () => {
+    signOut(auth);
+  };
+
   const values = {
     createUser,
     signIn,
+    logOut,
     currentUser: { displayName: "felix franko" },
   };
 
