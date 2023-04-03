@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Navbar from "../components/Navbar";
 import Register from "../pages/Register";
 import MovieDetail from "../pages/MovieDetail";
+import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
@@ -14,7 +15,8 @@ const AppRouter = () => {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/details/:id" element={<MovieDetail />} />
+        <Route path="/details/:id" element={<PrivateRouter />} />
+        <Route path="" element={<MovieDetail />} />
       </Routes>
     </>
   );
