@@ -1,13 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { MovieContext } from "../context/MovieContext";
 import MovieCard from "../components/MovieCard";
+import { AuthContext } from "../context/AuthContext";
+import { toastWarnNotify } from "../helpers/ToastNotify";
+import { useNavigate } from "react-router-dom";
+
+const API_KEY = process.env.REACT_APP_TMDB_KEY;
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
 const Main = () => {
-  const { movies, loading } = useContext(MovieContext);
+  const { movies, loading, getMovies } = useContext(MovieContext);
+  const { currentUser } = useContext(AuthContext);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (currentUser && searchTerm) {
+      getMovies(SEARCH_API + searchTerm);
+    } else if (!currentUser) {
+      toastWarnNotify("Please log in to search a movie!");
+      navigate("/login");
+    } else {
+      toastWarnNotify("Please enter a text!");
+    }
+  };
+
   return (
     <div>
-      <form className="flex justify-center p-2" >
+      <form className="flex justify-center p-2" onSubmit={handleSubmit}>
         <input
           type="search"
           className="w-80 h-8 rounded-md p-1 m-2"
