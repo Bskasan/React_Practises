@@ -1,8 +1,8 @@
 import React from "react";
 
-const MovieCard = () => {
+const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   return (
-    <div className="movie">
+    <div className="movie" id="container">
       <img
         loading="lazy"
         src={poster_path ? IMG_API + poster_path : defaultImage}
