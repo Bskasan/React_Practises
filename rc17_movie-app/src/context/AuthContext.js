@@ -76,7 +76,7 @@ const AuthContextProvider = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const { email, displayName, photoURL } = user;
-        setCurrentUser({ email, displayName, photoURL });
+        setCurrentUser({ email, displayName, photoURL })
         sessionStorage.setItem(
           "user",
           JSON.stringify({ email, displayName, photoURL })
