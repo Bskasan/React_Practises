@@ -41,7 +41,7 @@ const AuthContextProvider = ({ children }) => {
         displayName: displayName,
       });
       navigate("/");
-      toastSuccessNotify("Registered Successfully!");
+      toastSuccessNotify("Registered successfully!");
     } catch (error) {
       toastErrorNotify(error.message);
     }
@@ -82,7 +82,6 @@ const AuthContextProvider = ({ children }) => {
   const signUpProvider = () => {
     //? Google ile giriş yapılması için kullanılan firebase metodu
     const provider = new GoogleAuthProvider();
-
     //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -99,6 +98,7 @@ const AuthContextProvider = ({ children }) => {
     createUser,
     signIn,
     logOut,
+    signUpProvider,
     currentUser,
   };
 
