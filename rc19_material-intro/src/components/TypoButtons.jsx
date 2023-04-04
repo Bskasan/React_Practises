@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material"; //* Bu import sekli Performans acisindan problemli
+import { Box, Button, Stack, Typography } from "@mui/material"; //* Bu import sekli Performans acisindan problemli
 import Container from "@mui/material/Container"; //!it's better for performance
 //import {Container} from "@mui/material"
 
@@ -48,10 +48,30 @@ const TypoButtons = () => {
             gap: 2,
           }}
         >
-          <Button variant="text" color="warning">Text</Button>
-          <Button variant="contained" color="error">Contained</Button>
+          <Button variant="text" color="warning">
+            Text
+          </Button>
+          <Button variant="contained" color="error">
+            Contained
+          </Button>
           <Button variant="outlined">Outlined</Button>
+          <Button variant="outlined">Primary</Button>
         </Box>
+
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}
+          justifyContent="center"
+          mt={5}
+        >
+          <Button variant="text" color="warning">
+            Text
+          </Button>
+          <Button variant="contained" color="error">
+            Contained
+          </Button>
+          <Button variant="outlined">Outlined</Button>
+        </Stack>
       </Container>
     </>
   );
