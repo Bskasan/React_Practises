@@ -39,7 +39,7 @@ function AppBarComp() {
     <AppBar
       position="static"
       color="secondary"
-      sx={{ backgroundColor: "purple" }}
+      sx={{ backgroundColor: "secondary.light" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
