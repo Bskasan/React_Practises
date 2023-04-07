@@ -15,28 +15,25 @@ export default function CardGrid() {
         Card Grid
       </Typography>
       <Grid container justifyContent="center" alignItems="center" spacing={2}>
-        {data.map((card) => {
-          const { id, name, text, img } = card;
-          return (
-            <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia component="img" image={img} title="green iguana" />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {text}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          );
-        })}
+        {data.map(({ id, name, text, img }) => (
+          <Grid item key={id} xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia component="img" image={img} title="green iguana" />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {text}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
     </>
   );
