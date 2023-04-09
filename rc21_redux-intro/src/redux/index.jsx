@@ -4,7 +4,7 @@ const initialState = {
 
 //? Pure js function
 //? Bir dis bagimlilik olmamali
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "INCREASE":
       return { counter: state.counter + 1 };
@@ -16,3 +16,5 @@ export const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducer;
