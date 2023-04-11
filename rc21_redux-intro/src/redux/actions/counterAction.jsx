@@ -1,4 +1,4 @@
-import { INCREASE } from "../types/counterTypes";
+import { DECREASE, INCREASE, RESET } from "../types/counterTypes";
 
 export const inc = () => {
   return {
