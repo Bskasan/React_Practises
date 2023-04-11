@@ -1,6 +1,10 @@
 import "./Counter.css";
 import { useDispatch, useSelector } from "react-redux";
 
+//! Reducer'lara key olarak isim atamasi yapilmazsa bu sekilde cagrilabilriler.
+//? const counter = useSelector((state) => state.counterReducer.counter)
+//? const todoList = useSelector((state) => state.todoReducer.todoList)
+
 const Counter = () => {
   const dispatch = useDispatch();
   // const counter = useSelector((state) => state.counter);
