@@ -8,7 +8,7 @@ const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
-    clearNews: () => {
+    clearNews: (state) => {
       state.news = [];
     },
   },
