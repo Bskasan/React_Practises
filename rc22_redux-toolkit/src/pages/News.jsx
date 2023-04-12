@@ -9,7 +9,7 @@ import { CardMedia } from "@mui/material";
 const News = () => {
   return (
     <>
-      <h1>NEWS</h1>
+      <h1 align="center">NEWS</h1>
       <Box
         xs={{ d: "flex" }}
         display="flex"
