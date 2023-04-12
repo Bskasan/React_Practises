@@ -5,11 +5,16 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const navigate = useNavigate();
+
   //TODO - Read user information from global state
-  const user = false;
+  //? const user = useSelector((state) => state.auth.user);
+  const { user } = useSelector((state) => state.auth);
+
+  console.log(user);
 
   const handleLogout = () => {
     //TODO - Delete the global user state

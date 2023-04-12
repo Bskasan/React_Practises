@@ -9,7 +9,7 @@ const store = configureStore({
     news: newsReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
-  //! Dev tool'u kapatmak icin kullanılan degisken
+  //! Dev tool'u kapatmak icin kullanılan degisken (You can write false)
 });
 
 export default store;
