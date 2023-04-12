@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const navigate = useNavigate();
   //TODO - Read user information from global state
-  const user = true;
+  const user = false;
 
   const handleLogout = () => {
     //TODO - Delete the global user state
@@ -21,19 +21,23 @@ export default function Navbar() {
       <AppBar position="static" color="primary">
         <Toolbar>
           <Typography
-            variant="h6"
+            variant="h4"
             component="div"
             sx={{ flexGrow: 1, cursor: "pointer" }}
             onClick={() => navigate("/")}
           >
-            Clarusway News
+            WORLD NEWS
           </Typography>
           {user && (
             <Button color="inherit" onClick={handleLogout}>
               Log out
             </Button>
           )}
-          {!user && <Button color="inherit">Login</Button>}
+          {!user && (
+            <Button color="inherit" onClick={() => navigate("/login")}>
+              Login
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
