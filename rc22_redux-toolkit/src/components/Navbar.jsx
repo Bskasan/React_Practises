@@ -8,6 +8,14 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  //TODO - Read user information from global state
+  const user = true;
+
+  const handleLogout = () => {
+    //TODO - Delete the global user state
+    navigate("/login");
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="primary">
@@ -20,8 +28,12 @@ export default function Navbar() {
           >
             Clarusway News
           </Typography>
-
-          <Button color="inherit">Login</Button>
+          {user && (
+            <Button color="inherit" onClick={handleLogout}>
+              Log out
+            </Button>
+          )}
+          {!user && <Button color="inherit">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>
