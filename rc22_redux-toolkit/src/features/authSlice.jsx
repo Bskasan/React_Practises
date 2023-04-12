@@ -16,5 +16,8 @@ const authSlice = createSlice({
   },
 });
 
+//* To export our methods in Slice
 export const { setUser, clearUser } = authSlice.actions;
+
+//* To export everything in Slice
 export default authSlice.reducer;
