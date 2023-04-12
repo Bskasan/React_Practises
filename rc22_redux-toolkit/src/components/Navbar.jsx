@@ -5,10 +5,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearUser } from "../features/authSlice";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //TODO - Read user information from global state
   //? const user = useSelector((state) => state.auth.user);
@@ -18,6 +20,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     //TODO - Delete the global user state
+    dispatch(clearUser());
     navigate("/login");
   };
 
@@ -33,12 +36,12 @@ export default function Navbar() {
           >
             WORLD NEWS
           </Typography>
-          {user && (
+          {user?.email && user.password && (
             <Button color="inherit" onClick={handleLogout}>
-              Log out
+              Logout
             </Button>
           )}
-          {!user && (
+          {!user?.email && (
             <Button color="inherit" onClick={() => navigate("/login")}>
               Login
             </Button>
