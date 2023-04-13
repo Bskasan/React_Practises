@@ -7,7 +7,8 @@ import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
+import TextField from "@mui/material/TextField";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -63,7 +64,21 @@ const Login = () => {
               actions.setSubmitting(false);
             }}
           >
-            {({ values, handleChange, handleBlur }) => {}}
+            {({ values, handleChange, handleBlur, errors, touched }) => (
+              <Form>
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                  <TextField
+                    label="Email"
+                    name="email"
+                    id="email"
+                    type="email"
+                    variant="outlined"
+                    error={touched.email && Boolean(errors.email)}
+                    helperText={}
+                  />
+                </Box>
+              </Form>
+            )}
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
