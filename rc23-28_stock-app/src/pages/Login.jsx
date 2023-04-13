@@ -11,10 +11,11 @@ import { Formik, Form } from "formik";
 import TextField from "@mui/material/TextField";
 import { object, string, number, date, InferType } from "yup";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { login } from "../hooks/useAuthCall";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { currentUser, error } = useSelector((state) => state?.auth);
+  const { currentUser, error, loading } = useSelector((state) => state?.auth);
 
   const loginSchema = object({
     email: string()
@@ -73,6 +74,7 @@ const Login = () => {
             //? Generally named like values and action.
             onSubmit={(values, actions) => {
               //TODO login(values) POST istegi
+              login(values);
               //TODO navigate
               actions.resetForm();
               actions.setSubmitting(false);
@@ -103,7 +105,11 @@ const Login = () => {
                     error={touched.password && Boolean(errors.password)}
                     helperText={touched.password && errors.password}
                   />
-                  <LoadingButton variant="contained" type="submit">
+                  <LoadingButton
+                    variant="contained"
+                    type="submit"
+                    loading={loading}
+                  >
                     Submit
                   </LoadingButton>
                 </Box>
