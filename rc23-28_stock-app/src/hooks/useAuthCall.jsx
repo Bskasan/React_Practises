@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { fetchStart } from "../features/authSlice";
+import { fetchFail, fetchStart, loginSuccess } from "../features/authSlice";
 
 const useAuthCall = () => {
+  const dispatch = useDispatch();
+
   const login = async (userInfo) => {
-    const dispatch = useDispatch();
     const BASE_URL = "https://12177.fullstack.clarusway.com/";
 
     dispatch(fetchStart());
@@ -15,7 +16,10 @@ const useAuthCall = () => {
         `${BASE_URL}account/auth/login/`,
         userInfo
       );
+      dispatch(loginSuccess(data));
+      console.log(data);
     } catch (error) {
+      dispatch(fetchFail());
       console.log(error);
     }
   };
