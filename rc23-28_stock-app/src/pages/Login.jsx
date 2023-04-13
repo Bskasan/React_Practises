@@ -9,12 +9,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Formik, Form } from "formik";
 import TextField from "@mui/material/TextField";
+import { object, string, number, date, InferType } from "yup";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error } = useSelector((state) => state?.auth);
 
-  const loginSchema = {};
+  const loginSchema = object({
+    email: string()
+      .email("Write a valid email!")
+      .required("Email is mandatory"),
+    password: string()
+      .required("Password is mandatory")
+      .min(8, "At least 8 characters")
+      .max(20, "Max 20 characters")
+      .matches(/\d+/, "At least 1 number")
+      .matches(/[a-z]/, "At least 1 lower-case letter")
+      .matches(/[A-Z]/, "At least 1 upper-case letter")
+      .matches(/[!,?{}><%&$#£+-.]+/, "Must have at least 1 special character!"),
+  });
 
   return (
     <Container maxWidth="lg">
@@ -66,16 +80,32 @@ const Login = () => {
           >
             {({ values, handleChange, handleBlur, errors, touched }) => (
               <Form>
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <TextField
                     label="Email"
                     name="email"
                     id="email"
                     type="email"
                     variant="outlined"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     error={touched.email && Boolean(errors.email)}
-                    helperText={}
+                    helperText={touched.email && errors.email}
                   />
+                  <TextField
+                    label="Password"
+                    name="password"
+                    id="password"
+                    type="password"
+                    variant="outlined"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={touched.password && Boolean(errors.password)}
+                    helperText={touched.password && errors.password}
+                  />
+                  <LoadingButton variant="contained" type="submit">
+                    Submit
+                  </LoadingButton>
                 </Box>
               </Form>
             )}
