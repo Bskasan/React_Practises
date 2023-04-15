@@ -15,7 +15,7 @@ const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const BASE_URL = "https://12177.fullstack.clarusway.com/redoc/";
+  const BASE_URL = "https://12177.fullstack.clarusway.com/";
 
   const login = async (userInfo) => {
     dispatch(fetchStart());
@@ -63,4 +63,7 @@ const useAuthCall = () => {
     }
   };
 
-  return { login, register, logo
+  return { login, register, logout };
+};
+
+export default useAuthCall;
