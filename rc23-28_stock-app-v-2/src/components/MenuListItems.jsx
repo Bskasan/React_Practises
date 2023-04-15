@@ -17,24 +17,68 @@ import { useNavigate } from "react-router-dom";
 
 const icons = [
   {
+    icon: <DashboardIcon />,
     title: "Dashboard",
-    icon: <MailIcon />,
     url: "/stock/",
+  },
+  {
+    title: "Purchase",
+    icon: <ShoppingCartIcon />,
+    url: "/stock/purchases/",
+  },
+  {
+    title: "Sales",
+    icon: <AttachMoneyIcon />,
+    url: "/stock/sales/",
+  },
+  {
+    title: "Firms",
+    icon: <StoreIcon />,
+    url: "/stock/firms/",
+  },
+  {
+    title: "Brands",
+    icon: <StarsIcon />,
+    url: "/stock/brands/",
+  },
+  {
+    title: "Products",
+    icon: <InventoryIcon />,
+    url: "/stock/products/",
+  },
+  {
+    title: "Admin Panel",
+    icon: <SupervisorAccountIcon />,
+    url: "https://12177.fullstack.clarusway.com/admin",
   },
 ];
 
+const iconStyle = {
+  color: "white",
+  "& .MuiSvgIcon-root": { color: "white" },
+  "&:hover": { color: "red" },
+  "&:hover .MuiSvgIcon-root": { color: "red" },
+};
+
 const MenuListItems = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+        {icons?.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            {item.url.includes("http") && (
+              <ListItemButton to={item.url} sx={iconStyle}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            )}
+            {!item.url.includes("http") && (
+              <ListItemButton onClick={() => navigate(item.url)} sx={iconStyle}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            )}
           </ListItem>
         ))}
       </List>
